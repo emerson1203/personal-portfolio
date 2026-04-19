@@ -1,6 +1,6 @@
 # HOW TO USE THIS WEBSITE
 
-Welcome to your new portfolio, Emmersyn! This website was designed to be simple, cute, and ready to go.
+Welcome to your new portfolio, Emerson! This website was designed to be simple, cute, and ready to go.
 
 ## 📂 Project Structure
 - `index.html`: Your main homepage.
