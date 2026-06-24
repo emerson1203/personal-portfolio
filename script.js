@@ -20,19 +20,30 @@ function shuffle(array) {
     }
 
     function renderLists(wordGroups) {
-        const container = document.getElementById("lists-container");
-        container.innerHTML = ""; // clear previous
+        const container = document.getElementById("game-container");
+        container.innerHTML = "";
 
-        wordGroups.forEach(group => {
+        const letters = shuffle("ABCDEFGHIJKLMNOPRSTW".split(""));
+
+        wordGroups.forEach((group, index) => {
+            const letter = letters[index % letters.length];
+            const card = document.createElement("div");
+            card.className = "info-card";
+
+            const title = document.createElement("h3");
+            title.textContent = `Round ${index + 1} — ${letter}`;
+            card.appendChild(title);
+
             const ul = document.createElement("ul");
-
             group.forEach(word => {
                 const li = document.createElement("li");
                 li.textContent = word;
                 ul.appendChild(li);
+            });
+
+            card.appendChild(ul);
+            container.appendChild(card);
         });
-        container.appendChild(ul);
-    });
     }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -95,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
+    fadeElements.forEach(el => el.classList.add('visible'));
     
     // --- SMOOTH SCROLLING ---
     // Makes internal links feel more polished

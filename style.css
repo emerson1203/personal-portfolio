@@ -255,6 +255,13 @@ main.container {
     padding-bottom: 3rem;
 }
 
+#game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
 .container p, .about-grid, .hobby-list {
     padding: 2rem;
 }
